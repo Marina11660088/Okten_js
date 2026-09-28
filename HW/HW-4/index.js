@@ -1,11 +1,16 @@
 
 function exchange(sumUAH,currencyValues,exchangeCurrency){
-
-    if(exchangeCurrency==='USD'){
-        console.log(sumUAH/currencyValues[0].value);
-    } else  if (exchangeCurrency==='EUR'){
-        console.log(sumUAH/currencyValues[1].value);
+if (sumUAH >= 0){
+    for (const element of currencyValues) {
+        if (element.currency === exchangeCurrency) {
+            return sumUAH / element.value;
+        }
     }
+} else {
+    console.log('сумма повинна бути додатнім числом')
+}
+
 
 }
-exchange(5100,[{currency:'USD',value:42},{currency:'EUR',value:51}],'EUR');
+console.log(exchange(50000,[{currency:'USD',value:42},{currency:'EUR',value:51}],'EUR'));
+
