@@ -67,3 +67,4 @@ let reduceCards = cards.reduce((accumulator, card) => {
     return accumulator;
 }, {spades: [], diamonds: [], hearts: [], clubs: []});
 console.log(reduceCards)
+
